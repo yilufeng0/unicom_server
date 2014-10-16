@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.cb.timestr.TimeStr;
@@ -54,7 +55,8 @@ public class QueryItem {
 	
 	public List<ListViewVo> queryItem(){
 		List<ListViewVo> lv=null;
-		String timeStr= TimeStr.getDateStr();
+		Date now=new Date();
+		String timeStr= TimeStr.getDateStr(now);
 		Connection conn=JDBC_Connection.getConnection();
 		try {
 			PreparedStatement pstm=conn.prepareStatement("select * from listviewinfo WHERE timestr like ?");

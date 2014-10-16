@@ -26,7 +26,7 @@ public class ListViewJson {
 		JSONObject js= new JSONObject();
 		js.put("id", lv.getId());
 		js.put("title", lv.getTitle());
-		js.put("descrip", lv.getDescrip());
+//		js.put("descrip", lv.getDescrip());
 		js.put("time", lv.getTimestr());
 		js.put("imageurl",lv.getImageurl());
 		js.put("texturl", lv.getTexturl());

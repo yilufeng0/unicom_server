@@ -11,22 +11,22 @@ public class TimeStr {
 		return timeStr;
 	}
 	
-	public static String getDateStr(){
-		Date now = new Date();
+	public static String getDateStr(Date now){
+//		Date now = new Date();
 		SimpleDateFormat dateFormat=new SimpleDateFormat("yyyyMMdd");
 		String timeStr=dateFormat.format(now);
 		return timeStr;
 	}
 	
-	public static String getTimeStr(){
-		Date now=new Date();
+	public static String getTimeStr(Date now){
+//		Date now=new Date();
 		SimpleDateFormat dateFormat=new SimpleDateFormat("HHmmss");
 		String timeStr=dateFormat.format(now);
 		return timeStr;
 	}
 	
-	public static String getAllStr(){
-		Date now= new Date();
+	public static String getAllStr(Date now){
+//		Date now= new Date();
 		SimpleDateFormat dateFormat=new SimpleDateFormat("yyyyMMddHHmmss");
 		String timeStr=dateFormat.format(now);
 		return timeStr;

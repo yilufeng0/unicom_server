@@ -3,6 +3,7 @@
  */
 package com.cn.listviewdb;
 
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -20,18 +21,18 @@ import com.cn.jdbc.JDBC_Connection;
  */
 public class InsertImagedb {
 	
-	public void insertintodb(File file,String timeStr) throws FileNotFoundException{
+	public static void insertintodb(BufferedInputStream in,String timeStr) throws FileNotFoundException{
 		Connection conn=null;
 		Statement stmt=null;
 		ResultSet rs=null;
 //		File file=new File("d:/test1.jpg");
-		FileInputStream fis=new FileInputStream(file);
+//		FileInputStream fis=new FileInputStream(file);
 		
 		try {
 			conn=JDBC_Connection.getConnection();
 			PreparedStatement ps=conn.prepareStatement("insert into listviewimage(timestr,imagedata) values(?,?)");
 			ps.setString(1, timeStr);
-			ps.setBinaryStream(2, fis);
+			ps.setBinaryStream(2, in);
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			// TODO: handle exception
