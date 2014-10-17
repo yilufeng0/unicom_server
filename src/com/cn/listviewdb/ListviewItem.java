@@ -55,7 +55,7 @@ public class ListviewItem extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		final String rootPath="";
+		final String rootPath="";//在此写入请求中心的地址
 		Date now=new Date();
 		String timeStr=TimeStr.getAllStr(now);
 		HashMap<String, String> hashMap= new HashMap<>();

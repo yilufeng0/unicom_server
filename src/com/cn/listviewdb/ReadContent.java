@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class ReadContent
+ * 
+ * 完成对listview中正文内容的反馈
+ * 
+ * 
  */
 @WebServlet("/ReadContent")
 public class ReadContent extends HttpServlet {

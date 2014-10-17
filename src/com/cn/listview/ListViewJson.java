@@ -9,6 +9,7 @@ import org.json.simple.JSONObject;
 import sun.security.action.GetLongAction;
 
 import com.cn.listviewdb.ListViewQuery;
+import com.cn.listviewdb.QueryItem;
 
 /**
  * 
@@ -61,8 +62,8 @@ public class ListViewJson {
 	public static void main(String[] args) throws SQLException {
 		JSONObject js=null;
 		ListViewJson lvj= new ListViewJson();
-		ListViewQuery lvq= new ListViewQuery();
-		js= lvj.getListViewsJson(lvq.getItemsById(1));
+		
+		js= lvj.getListViewsJson(new QueryItem().queryItem(1));
 		System.out.print(js);
 	}
 	

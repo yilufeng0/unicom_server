@@ -33,6 +33,7 @@ public class QueryItem {
 			temp_lv.setTexturl(rs.getString("contenturl"));
 			temp_lv.setImageurl(rs.getString("imageurl"));
 			temp_lv.setDescrip(rs.getString("description"));
+			lv.add(temp_lv);
 		}
 		return lv;
 	}
@@ -53,10 +54,10 @@ public class QueryItem {
 		return lv;
 	}
 	
-	public List<ListViewVo> queryItem(){
+	public List<ListViewVo> queryItem(String timeStr){
 		List<ListViewVo> lv=null;
-		Date now=new Date();
-		String timeStr= TimeStr.getDateStr(now);
+//		Date now=new Date();
+//		String timeStr= TimeStr.getDateStr(now);
 		Connection conn=JDBC_Connection.getConnection();
 		try {
 			PreparedStatement pstm=conn.prepareStatement("select * from listviewinfo WHERE timestr like ?");
@@ -68,6 +69,12 @@ public class QueryItem {
 			e.printStackTrace();
 		}
 		return lv;
+	}
+	
+	public static void main(String[] args){
+		QueryItem qi= new QueryItem();
+		List<ListViewVo> lv=qi.queryItem("e");
+		System.out.print("111");
 	}
 	
 }

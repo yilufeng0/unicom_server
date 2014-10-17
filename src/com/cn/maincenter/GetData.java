@@ -39,13 +39,16 @@ public class GetData extends HttpServlet {
 		String type=req.getParameter("type");
 		
 		if("feedback".equals(type)){
+			req.getRequestDispatcher("Feedback").forward(req, resp);
 			
 		}else if("homeitem".equals(type)){
-			req.getRequestDispatcher("listviewitem").forward(req, resp);
-		}else if("reg".equals(type)){
+			req.getRequestDispatcher("ListViewServlet").forward(req, resp);
+		}else if("image".equals(type)){
+			req.getRequestDispatcher("GetImageFromdb").forward(req, resp);
 			
-		}else if("login".equals(type)){
-			
+		}else if("content".equals(type)){
+			req.getRequestDispatcher("ReadContent").forward(req, resp);
+						
 		}else if("position".equals(type)){
 			req.getRequestDispatcher("position").forward(req, resp);			
 		}
