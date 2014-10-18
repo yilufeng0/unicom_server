@@ -48,7 +48,7 @@ public class GetImageFromdb extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String timeStr=request.getParameter("timestr");
+		String timeStr=request.getParameter("time");
 		Connection conn=null;
 		Statement stmt=null;
 		ResultSet rs=null;
