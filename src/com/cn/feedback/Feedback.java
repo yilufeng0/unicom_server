@@ -47,7 +47,7 @@ public class Feedback extends HttpServlet {
 			fv.setTel(request.getParameter("tel"));
 		} catch (Exception e) {
 			// TODO: handle exception
-			fv.setTel(request.getParameter("tel"));
+			fv.setTel(request.getParameter(""));
 		}
 		InsertIntodb.insertIntoDb(fv);
 	}
