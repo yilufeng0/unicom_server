@@ -29,6 +29,7 @@ public class TimeStr {
 //		Date now= new Date();
 		SimpleDateFormat dateFormat=new SimpleDateFormat("yyyyMMddHHmmss");
 		String timeStr=dateFormat.format(now);
+		System.out.println("hello");
 		return timeStr;
 	}
 	
